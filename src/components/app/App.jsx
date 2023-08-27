@@ -8,7 +8,7 @@ const Home = lazy (() => import(""));
 const Movies = lazy (() => import(""));
 const MovieDetails = lazy (() => import(""));
 const Cast = lazy (() => import("../Cast/Cast"));
-const Reviews = lazy (() => import(""));
+const Reviews = lazy (() => import("../Reviews/Reviews"));
 
 const App = () => {
   return (
