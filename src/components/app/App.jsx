@@ -1,13 +1,13 @@
 
 import { Routes, Route } from "react-router-dom";
-import React, { lazy } from "react";
+import React, { lazy, Suspense } from "react";
 import Appbar from "../AppBar/AppBar";
 import Container from "../Container";
 
 const Home = lazy (() => import(""));
 const Movies = lazy (() => import(""));
 const MovieDetails = lazy (() => import(""));
-const Cast = lazy (() => import(""));
+const Cast = lazy (() => import("../Cast/Cast"));
 const Reviews = lazy (() => import(""));
 
 const App = () => {
