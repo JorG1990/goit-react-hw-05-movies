@@ -1,12 +1,12 @@
+import propTypes from "prop-types";
 
-import PropTypes from "prop-types";
 
-export default function Container({ children }){
+export default function Container({children}){
   return (
-    <div>{ children }</div>
+    <div>{children}</div>
   )
 }
 
-Container.prototype = {
-  children: PropTypes.array
+Container.protoTypes = {
+    children:propTypes.array
 }

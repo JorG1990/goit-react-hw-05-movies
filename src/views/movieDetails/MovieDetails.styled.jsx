@@ -1,4 +1,3 @@
-
 import styled from "styled-components";
 
 export const GoBack = styled.div`
@@ -51,3 +50,6 @@ export const ContainerInformation = styled.div`
 
 
 `;
+
+
+

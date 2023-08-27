@@ -1,21 +1,21 @@
-import { Link, useLocation, useSearchParams } from "react-router-dom";
-import { useState, useEffect } from "react";
 import { searchMovies } from "servicesApi/ApiMovies";
-import { ContainerMovies } from "./Movie.styled";
+import { useState, useEffect } from "react";
+import { Link, useSearchParams, useLocation } from "react-router-dom";
+import { ContainerMovies } from "./Movies.styled";
 
 const Movies = () => {
-  const [data, setData] =useState(null);
+  const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
   const [searchParams, setSearchParams] = useSearchParams();
-  const searchQuery = searchParams.get('query');
+  const searchQuery = searchParams.get("query");
 
-  const [query, setQuery] =useState(() => searchQuery || '');
+  const [query, setQuery] = useState(() => searchQuery || "");
 
   const location = useLocation();
 
   useEffect(() => {
-    const getData = async () =>{
+    const getData = async () => {
       try {
         setLoading(true);
         const { results } = await searchMovies(searchQuery);
@@ -44,14 +44,16 @@ const Movies = () => {
   return (
     <>
       <ContainerMovies>
-        <h2>Search movies</h2>
-        <form onSubmit={ handleSubmit }>
+        <h2 >Search Movies</h2>
+
+        <form onSubmit={handleSubmit} >
           <input
-            value={ query }
-            onChange={ handleChange }
+            value={query}
+            onChange={handleChange}
             name="search"
             type="text"
-            placeholder="Movie search here"
+            placeholder="Movie Search Here"
+
           />
           <button type="submit">
             Search
@@ -59,22 +61,24 @@ const Movies = () => {
         </form>
       </ContainerMovies>
       <ul>
-        { searchQuery ? (
+        {searchQuery ? (
           loading ? (
             "Loading..."
           ) : data.length > 0 ? (
             data.map(({ title, id }) => (
-              <li key={ id }>
-                <Link state={{ from: location }} to={ `/movies/${id}` } >
-                  { title }
+              <li key={id} >
+                <Link state={{ from: location }} to={`/movies/${id}`}>
+                  {title}
                 </Link>
               </li>
             ))
           ) : (
-            <p>No movies with this title were found. Try entering another title</p>
+            <p>
+              No movies with this title were found. Try entering another title
+            </p>
           )
         ) : (
-          <p></p>
+          <p ></p>
         )}
       </ul>
     </>
