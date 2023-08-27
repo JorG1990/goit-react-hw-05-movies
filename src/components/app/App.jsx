@@ -3,9 +3,9 @@ import React, { lazy, Suspense } from "react";
 import Appbar from "components/AppBar/AppBar";
 import Container from "components/Container/Container";
 
-const Home = lazy(() => import("views/Home/Home"));
-const Movies = lazy(() => import("views/Movies/Movies"));
-const MovieDetails = lazy(() => import("views/MovieDetails/MovieDetails"));
+const Home = lazy(() => import("views/home/Home"));
+const Movies = lazy(() => import("views/movies/Movies"));
+const MovieDetails = lazy(() => import("views/movieDetails/MovieDetails"));
 const Cast = lazy(() => import("components/Cast/Cast"));
 const Reviews = lazy(() => import("components/Reviews/Reviews"));
 
