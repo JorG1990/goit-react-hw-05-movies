@@ -33,7 +33,7 @@ const Cast = () => {
         { cast.length > 0 ? (
           <Ul>
             {cast.map (({ id, name, character, profile_path}) => {
-              let profileImg = "https://image.tmdb.org/t/p/w500${profile_path}";
+              let profileImg = `https://image.tmdb.org/t/p/w500${profile_path}`;
               if (!profile_path) {
                 profileImg = "https://images.emojiterra.com/google/noto-emoji/unicode-15/color/128px/2753.png";
                 name = `${name} (No Image Available)`;
