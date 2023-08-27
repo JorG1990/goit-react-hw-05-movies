@@ -2,7 +2,7 @@
 import { Routes, Route } from "react-router-dom";
 import React, { lazy, Suspense } from "react";
 import Appbar from "../AppBar/AppBar";
-import Container from "../Container";
+import Container from "../Container/Container";
 
 const Home = lazy (() => import(""));
 const Movies = lazy (() => import(""));
